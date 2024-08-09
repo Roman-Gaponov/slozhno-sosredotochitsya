@@ -2,4 +2,57 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  inline-size: 375px;
+  /* block-size: 100%; */
+  background-image: url(../images/cover-image-dark.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 375px 100%;
+  background-attachment: fixed;
+}
+
+.title-decor {
+  background-color: var(--accent-bg-color, rgb(255, 0, 112));
+}
+
+
+.header {
+  padding-block: 10px;
+  inline-size: 100%;
+  font-family: var(--main-font, sans-serif);
+}
+
+.header__title {
+  color: var(--title-color, rgb(219, 0, 255));
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.825;
+  font-weight: bold;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.main-content {
+  margin-block-start: 30px;
+  padding-block: 0 10px;
+}
+
+.footer {
+  margin-block-start: 30px;
+  padding-block: 10px;
+}
+
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+}
+
+.content__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
