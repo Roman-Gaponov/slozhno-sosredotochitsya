@@ -4,10 +4,30 @@
 */
 
 :root {
-  /* Переменные тёмной темы */
+  /* Переменные для тёмной темы */
+
+  --main-title-color: rgb(219 0 255);
+  --section-title-color: rgb(255 0 112);
+  --subtitle-color: rgb(0 0 40);
+  --text-color: rgb(241 178 206);
+  --accent-color: rgb(255 0 112);
+  --shadow-color: rgb(255 0 112 / 0.4);
+  --decor-color: rgb(255 0 112);
+  --button-color: rgb(255 0 112);
+  --button-hover-color: rgb(255 0 112 / 0.4);
+  --focus-color: rgb(255 0 112);
+  --focus-color-link: rgb(241 178 206);
+
+  --bg-clr:rgb(0 0 40);
+  --bg-img: url(../images/cover-image-dark.png);
+
+  /* общие переменные */
+
   --main-font: 'IBM Plex Mono';
-  --title-color: rgb(219, 0, 255);
-  --text-color: rgb(0, 0, 40);
-  --accent-color: #ff0070;
-  --accent-bg-color: rgb(255, 0, 112);
+
+  --main-title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --title-font-size: 18px;
+  --subtitle-font-size: 18px;
+  --text-font-size: 18px;
+  --button-font-size: 18px;
 }
