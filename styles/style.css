@@ -26,6 +26,9 @@
   background-color: var(--accent-color);
 }
 
+
+/* декоративные "уголки" для шапки и футера */
+
 .decorated-zone::before {
   position: absolute;
   content: "";
@@ -48,15 +51,19 @@
   inset-inline-end: 0px;
 }
 
+
+/* стилизуем шапку */
+
 .header {
-  margin-block-end: 40px;
-  display: grid;
   block-size: 100vh;
+  min-block-size: 668px;
+  margin-block-end: 40px;
+  padding-block: 10px;
+  display: grid;
   position: relative;
   color: var(--accent-color);
-  padding-block: 10px;
   inline-size: 100%;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 1fr min-content 1fr;
 }
 
 .header__decorative-element::before {
@@ -118,6 +125,7 @@
   outline: 1px solid var(--button-color);
 }
 
+
 /* заголовок и подзаголовок шапки */
 
 .header__title {
@@ -130,7 +138,6 @@
 
 .header__subtitle {
   inline-size: 100%;
-  /* inline-size: calc(100vi - 20px); */
   align-self: center;
   justify-self: end;
   font-size: var(--subtitle-font-size);
@@ -185,12 +192,12 @@
   outline: 1px solid var(--focus-color-link);
 }
 
-.images-list {
+  .images-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
+ 
 .in-images__content-img {
   width: 100%;
   height: 100%;
@@ -198,14 +205,16 @@
   object-position: center;
 }
 
+
 /* стилизуем футер */
 
 .footer {
+  block-size: 100vh;
+  min-block-size: 668px;
   margin-block-start: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  block-size: 100vh;
   position: relative;
   color: var(--accent-color);
   padding-block: 10px;
@@ -221,11 +230,110 @@
 }
 
 
+/* медиазапросы для планшетов*/
+
 @media (width >= 768px) {
+  :root {
+    --main-title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .page {
+    padding-inline: 20px;
+  }
+  
+  .decorated-zone::before {
+    inset-block-end: 20px;
+    inset-inline-start: 0px;
+  }
+  
+  .decorated-zone::after {
+    inset-block-start: 20px;
+    inset-inline-end: 0px;
+  }
+
+  .header {
+    margin-block-end: 60px;
+    padding-block: 20px;
+  }
+
+  .header__title {
+    position: relative;
+    right: 20px;
+  }
+
   .header__subtitle {
-    inline-size: 50vi;
+    inline-size: 50%;
+  }
+
+  .header__decorative-element::before {
+    inset-block-start: 23px;
+    inset-inline-end: 30px;
+  }
+  
+  .header__decorative-element::after {
+    inset-block-start: 30px;
+    inset-inline-end: 10px;
+  }
+
+  .why,
+  .how {
+    display: grid;
+    grid-template-columns: 236px calc(100% - 236px + 20px - 40px);
+    gap: 20px;
+  }
+
+  .why .article-list-item:nth-child(1),
+  .how .article__title {
+    margin-block-start: 0;
+  }
+
+  .in-images .article__title {
+    margin-block-end: 20px;
+  }
+
+  .images-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 192px 230px 318px;
+    gap: 20px;
+  } 
+
+  .images-list-item:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+  }
+
+  .images-list-item:nth-child(2) {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  .images-list-item:nth-child(3) {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-row-end: 4;
+  }
+
+  .images-list-item:nth-child(4) {
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+
+  .images-list-item:nth-child(5) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 3;
+  }
+
+  .footer {
+    margin-block-start: 60px;
   }
 } 
+
+
+/* медиазапросы для ноутбуков и больших мониторов */
 
 @media (width >= 1024px) {
   .header__theme-menu {
@@ -238,4 +346,25 @@
     flex-direction: row;
     gap: 25px;
   }
+
+  .what .section__title {
+    max-width: 315px;
+  }
+
+  .why,
+  .how {
+    display: grid;
+    grid-template-columns: 315px calc(100% - 315px + 20px - 40px);
+    gap: 20px;
+  }
+
+  .what .article-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .images-list {
+    grid-template-rows: 260px 315px 428px;
+  } 
 } 
