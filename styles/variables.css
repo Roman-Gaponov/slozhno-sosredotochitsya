@@ -18,13 +18,12 @@
   --focus-color: rgb(255 0 112);
   --focus-color-link: rgb(241 178 206);
 
-  --bg-clr:rgb(0 0 40);
+  --bg-clr: rgb(0 0 40);
   --bg-img: url(../images/cover-image-dark.png);
-
 
   /* общие переменные */
 
-  --main-font: 'IBM Plex Mono';
+  --main-font: "IBM Plex Mono";
 
   --main-title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --section-title-font-size: 18px;

@@ -22,20 +22,17 @@
   --focus-color: rgb(53 52 48);
   --focus-color-link: rgb(53 52 48);
 
-  --bg-clr:rgb(255 241 247);
-  --bg-img: url(../images/cover-image-light.png); 
+  --bg-clr: rgb(255 241 247);
+  --bg-img: url(../images/cover-image-light.png);
 }
 
 .page.theme_light .header__decorative-element {
   display: none;
 }
 
-
-
-
 @media (prefers-color-scheme: light) {
   :root {
-    /* Дублируем переменные светлой темы */    
+    /* Дублируем переменные светлой темы */
 
     --main-title-color: rgb(255 194 203);
     --section-title-color: rgb(53 52 48);
@@ -48,9 +45,8 @@
     --button-hover-color: rgb(50 49 45 / 0.4);
     --focus-color: rgb(53 52 48);
     --focus-color-link: rgb(53 52 48);
-  
-    --bg-clr:rgb(255 241 247);
-    --bg-img: url(../images/cover-image-light.png); 
+
+    --bg-clr: rgb(255 241 247);
+    --bg-img: url(../images/cover-image-light.png);
   }
 }
-

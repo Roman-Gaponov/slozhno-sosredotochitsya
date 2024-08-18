@@ -28,7 +28,6 @@
   background-color: var(--accent-color);
 }
 
-
 /* декоративные "уголки" для шапки и футера */
 
 .decorated-zone::before {
@@ -53,12 +52,10 @@
   inset-inline-end: 0px;
 }
 
-
 /* стилизуем шапку */
 
 .header {
-  block-size: 100vh;
-  min-block-size: 668px;
+  min-block-size: max(668px, 100vb);
   margin-block-end: 40px;
   padding-block: 10px;
   display: grid;
@@ -87,7 +84,6 @@
   box-shadow: 0 0 4px 2px var(--accent-color);
   border-radius: 50%;
 }
-
 
 /* меню переключения темы*/
 
@@ -129,7 +125,6 @@
   outline: 1px solid var(--button-color);
 }
 
-
 /* заголовок и подзаголовок шапки */
 
 .header__title {
@@ -146,7 +141,6 @@
   justify-self: end;
   line-height: 1.3;
 }
-
 
 /* стилизуем секции */
 
@@ -192,12 +186,12 @@
   outline: 1px solid var(--focus-color-link);
 }
 
-  .images-list {
+.images-list {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
- 
+
 .in-images__content-img {
   width: 100%;
   height: 100%;
@@ -205,12 +199,10 @@
   object-position: center;
 }
 
-
 /* стилизуем футер */
 
 .footer {
-  block-size: 100vh;
-  min-block-size: 668px;
+  min-block-size: max(668px, 100vb);
   margin-block-start: 40px;
   display: flex;
   justify-content: center;
@@ -229,8 +221,7 @@
   text-shadow: 2px 2px 0 var(--shadow-color);
 }
 
-
-/* медиазапросы для планшетов*/
+/* медиазапросы для телефонов*/
 
 @media (width < 768px) {
   .how .article__title.title-decor {
@@ -246,19 +237,19 @@
   }
 }
 
-
+/* медиазапросы для планшетов*/
 
 @media (width >= 768px) {
   :root {
     --main-title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     --page-padding: 20px;
   }
-  
+
   .decorated-zone::before {
     inset-block-end: 20px;
     inset-inline-start: 0px;
   }
-  
+
   .decorated-zone::after {
     inset-block-start: 20px;
     inset-inline-end: 0px;
@@ -282,7 +273,7 @@
     inset-block-start: 21px;
     inset-inline-end: 29px;
   }
-  
+
   .header__decorative-element::after {
     inset-block-start: 28px;
     inset-inline-end: 10px;
@@ -303,7 +294,7 @@
   .what,
   .how,
   .in-images {
-    margin-block-start: 30px;    
+    margin-block-start: 30px;
   }
 
   .what .section__title {
@@ -319,7 +310,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 192px 230px 318px;
     gap: 20px;
-  } 
+  }
 
   .images-list-item:nth-child(1) {
     grid-column-start: 1;
@@ -353,8 +344,7 @@
   .footer {
     margin-block-start: 60px;
   }
-} 
-
+}
 
 /* медиазапросы для ноутбуков и больших мониторов */
 
@@ -389,9 +379,9 @@
 
   .images-list {
     grid-template-rows: 260px 315px 428px;
-  } 
+  }
 
   .footer {
     margin-block-start: 65px;
   }
-} 
+}
