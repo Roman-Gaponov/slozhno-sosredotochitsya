@@ -2,7 +2,6 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  margin: 0 auto;
   inline-size: 100vi;
   padding-inline: var(--page-padding);
   background-color: var(--bg-clr);
