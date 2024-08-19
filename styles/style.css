@@ -2,7 +2,6 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  inline-size: 100vi;
   padding-inline: var(--page-padding);
   background-color: var(--bg-clr);
   background-image: var(--bg-img);
@@ -10,7 +9,7 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  font-family: var(--main-font, sans-serif);
+  font-family: var(--main-font, monospace);
 }
 
 .title-decor {
@@ -86,7 +85,7 @@
 
 /* меню переключения темы*/
 
-.header__theme-menu {
+.wrapper {
   align-self: center;
   justify-self: end;
 }
@@ -108,6 +107,7 @@
   background-color: transparent;
   border: none;
   line-height: 1;
+  cursor: pointer;
 }
 
 .header__theme-menu-button:hover {
@@ -115,13 +115,13 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--focus-color);
+  border-block-end: 1px solid currentColor;
   outline: none;
 }
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  outline: 1px solid var(--button-color);
+  outline: 1px solid currentColor;
 }
 
 /* заголовок и подзаголовок шапки */
@@ -159,7 +159,7 @@
   margin-block-start: 20px;
 }
 
-.in-images .article__title {
+.content-section:nth-child(4) .article__title {
   margin-block-end: 10px;
 }
 
@@ -178,11 +178,11 @@
 }
 
 .content-link:hover {
-  text-decoration: underline;
+  border-block-end: 1px solid currentColor;
 }
 
 .content-link:focus-visible {
-  outline: 1px solid var(--focus-color-link);
+  outline: 1px solid currentColor;
 }
 
 .images-list {
@@ -191,7 +191,7 @@
   gap: 5px;
 }
 
-.in-images__content-img {
+.content-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -223,15 +223,15 @@
 /* медиазапросы для телефонов*/
 
 @media (width < 768px) {
-  .how .article__title.title-decor {
+  .content-section:nth-child(3) .article__title.title-decor {
     margin-block-start: 20px;
   }
 
-  .how .article-list-item {
+  .content-section:nth-child(3) .article-list-item {
     margin-block-start: 21px;
   }
 
-  .how .article-list-item:nth-child(4) {
+  .content-section:nth-child(3) .article-list-item:nth-child(4) {
     margin-block-start: 19px;
   }
 }
@@ -278,29 +278,26 @@
     inset-inline-end: 10px;
   }
 
-  .why,
-  .how {
+  .content-section:nth-child(2n-1) {
     display: grid;
     grid-template-columns: 236px calc(100% - 236px + 20px - 40px);
     gap: 20px;
   }
 
-  .why .article-list-item:nth-child(1),
-  .how .article__title {
+  .content-section:nth-child(1) .article-list-item:nth-child(1),
+  .content-section:nth-child(3) .article__title {
     margin-block-start: 0;
   }
 
-  .what,
-  .how,
-  .in-images {
+  .content-section:not(:first-child) {
     margin-block-start: 30px;
   }
 
-  .what .section__title {
+  .content-section:nth-child(2) .section__title {
     max-width: 236px;
   }
 
-  .in-images .article__title {
+  .content-section:nth-child(4) .article__title {
     margin-block-end: 20px;
   }
 
@@ -348,7 +345,7 @@
 /* медиазапросы для ноутбуков и больших мониторов */
 
 @media (width >= 1024px) {
-  .header__theme-menu {
+  .wrapper {
     align-self: start;
     justify-self: center;
   }
@@ -359,18 +356,17 @@
     gap: 10px;
   }
 
-  .why,
-  .how {
+  .content-section:nth-child(2n-1) {
     display: grid;
     grid-template-columns: 315px calc(100% - 315px + 20px - 40px);
     gap: 20px;
   }
 
-  .what .section__title {
+  .content-section:nth-child(2) .section__title {
     max-width: 315px;
   }
 
-  .what .article-list {
+  .content-section:nth-child(2) .article-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
