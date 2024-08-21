@@ -159,7 +159,7 @@
   margin-block-start: 20px;
 }
 
-.content-section:nth-child(4) .article__title {
+.images-section .article__title {
   margin-block-end: 10px;
 }
 
@@ -223,15 +223,15 @@
 /* медиазапросы для телефонов*/
 
 @media (width < 768px) {
-  .content-section:nth-child(3) .article__title.title-decor {
+  .how-section .article__title.title-decor {
     margin-block-start: 20px;
   }
 
-  .content-section:nth-child(3) .article-list-item {
+  .how-section .article-list-item {
     margin-block-start: 21px;
   }
 
-  .content-section:nth-child(3) .article-list-item:nth-child(4) {
+  .how-section .article-list-item:nth-child(4) {
     margin-block-start: 19px;
   }
 }
@@ -278,27 +278,32 @@
     inset-inline-end: 10px;
   }
 
-  .content-section:nth-child(2n-1) {
+  .content-section {
     display: grid;
-    grid-template-columns: 236px calc(100% - 236px + 20px - 40px);
     gap: 20px;
-  }
-
-  .content-section:nth-child(1) .article-list-item:nth-child(1),
-  .content-section:nth-child(3) .article__title {
-    margin-block-start: 0;
   }
 
   .content-section:not(:first-child) {
     margin-block-start: 30px;
   }
 
-  .content-section:nth-child(2) .section__title {
-    max-width: 236px;
+  .why-section,
+  .how-section {
+    grid-template-columns: 236px calc(100% - 236px + 20px - 40px);
   }
 
-  .content-section:nth-child(4) .article__title {
-    margin-block-end: 20px;
+  .images-section .article__title {
+    margin-block-end: 0px;
+  }
+
+  .why-section .article-list-item:nth-child(1),
+  .what-section .article-list-item:nth-child(1),
+  .how-section .article__title {
+    margin-block-start: 0;
+  }
+
+  .what-section .section__title {
+    max-width: 236px;
   }
 
   .images-list {
@@ -356,20 +361,23 @@
     gap: 10px;
   }
 
-  .content-section:nth-child(2n-1) {
-    display: grid;
+  .why-section,
+  .how-section {
     grid-template-columns: 315px calc(100% - 315px + 20px - 40px);
-    gap: 20px;
   }
 
-  .content-section:nth-child(2) .section__title {
+  .what-section .section__title {
     max-width: 315px;
   }
 
-  .content-section:nth-child(2) .article-list {
+  .what-section .article-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+  }
+
+  .what-section .article-list-item {
+    margin-block-start: 0;
   }
 
   .images-list {
